@@ -10,7 +10,7 @@ import { NotFoundError } from 'errors';
 export const checkAuth = async (req: any, res: Response, next: Function) => {
   try {
     const token = req.header('Authorization').replace('Bearer ', '');
-    if(token === "abcdefg"){
+    if(token === "abcdefg123456"){
       next();
     } else {
       res.status(httpStatus.UNAUTHORIZED).json({
