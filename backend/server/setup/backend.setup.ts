@@ -11,7 +11,7 @@ import { errorHandlerMiddleware, requestLoggerMiddleware } from "middlewares";
 
 
 
-//import appRoutes from "routes";
+import appRoutes from "routes";
 
 const port = process.env.PORT || 5001;
 
@@ -27,7 +27,7 @@ const backendSetup = (app: Express) => {
     res.send("OK");
   });
 
-  //app.use(`/api/${ROUTE_VERSION}`, appRoutes);
+  app.use(`/api/${ROUTE_VERSION}`, appRoutes);
 
   app.use(errorHandlerMiddleware);
 
