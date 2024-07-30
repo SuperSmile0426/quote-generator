@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  quote-backend:
+    container_name: quote-backend
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: npm run start
+    environment:
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/user/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
